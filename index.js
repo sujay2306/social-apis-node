@@ -2,7 +2,14 @@ const express = require('express')
 const format = require("date-format")
 const { restart } = require('nodemon')
 const app = express()
-const port = 3000
+const port = process.env.Port || 4000
+
+//swagger docs
+const swaggerUi = require('swagger-ui-express');
+const YAML = require('yamljs');
+const swaggerDocument = YAML.load('./swagger.yml');
+//app.use is a middleware
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.get('/',(req,res) => {
     res.status(200).send("<h1> Hello from backend </h1>");
