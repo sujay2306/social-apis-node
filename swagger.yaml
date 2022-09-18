@@ -1,0 +1,20 @@
+openapi: 3.0.0
+info: 
+  title: Social App
+  description: out first social app - sujay
+  version: 1.5.7
+
+servers:
+   - url: "https://localhost:4000/api/v1"
+     description: for local host - secure
+   - url: "http://localhost:4000/api/v1"
+     description: for local host - regular
+
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+    BearerAuth: 
+      type: http
+      scheme: bearer

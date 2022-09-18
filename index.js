@@ -7,7 +7,7 @@ const port = process.env.Port || 4000
 //swagger docs
 const swaggerUi = require('swagger-ui-express');
 const YAML = require('yamljs');
-const swaggerDocument = YAML.load('./swagger.yml');
+const swaggerDocument = YAML.load('./swagger.yaml');
 //app.use is a middleware
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
